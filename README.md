@@ -1,3 +1,3 @@
 # Johann's Blog
 
-See the live site [here](joblog.netlify.com).
+See the live site [here](https://joblog.netlify.com).
