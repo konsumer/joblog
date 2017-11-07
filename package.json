@@ -1,6 +1,6 @@
 {
   "name": "joblog",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Johann Nilsson",
   "dependencies": {
     "bulma": "^0.6.0",
@@ -16,6 +16,5 @@
     "build": "gatsby build",
     "start": "gatsby develop"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
