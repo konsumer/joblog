@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.0.0",
-  "author": "Austin Green",
+  "name": "joblog",
+  "version": "0.0.0",
+  "author": "Johann Nilsson",
   "dependencies": {
     "bulma": "^0.6.0",
     "gatsby": "^1.9.63",
@@ -13,18 +12,10 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gatsby develop"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
   }
 }
