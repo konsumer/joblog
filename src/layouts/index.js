@@ -1,44 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
-import github from '../img/github-icon.svg';
-import 'bulma';
+import React from 'react'
+import PropTypes from 'prop-types'
+import graphql from 'graphql'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import 'bulma'
 
-const Navbar = () => (
-  <nav className="navbar is-light">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          Gatsby powered by Netlify CMS
+const Navbar = ({title}) => (
+  <nav className='navbar is-light'>
+    <div className='container'>
+      <div className='navbar-brand'>
+        <Link to='/' className='navbar-item'>
+          {title}
         </Link>
       </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
+      <div className='navbar-start'>
+        <Link className='navbar-item' to='/about'>
           About
         </Link>
       </div>
-      <div className="navbar-end">
-        <a className="navbar-item" href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate" target="_blank">
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
     </div>
   </nav>
-);
+)
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ children, data }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
+    <Helmet title={`Home | ${data.site.siteMetadata.title}`} />
+    <Navbar title={data.site.siteMetadata.title} />
     <div>{children()}</div>
   </div>
-);
+)
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
-};
+}
 
-export default TemplateWrapper;
+export const pageQuery = graphql`
+  query LayoutIndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
+
+export default TemplateWrapper
